@@ -22,11 +22,11 @@ conda install pytorch torchvision torchaudio -c pytorch  # If using torch for em
 conda install nltk sentencepiece
 pip install langchain sentence-transformers chromadb ollama streamlit datasets torch nltk # inside activated conda env
 ```
-### 2. Install Ollama and Pull Model
+### 2. Install Ollama and pull a computationally inexpensive model
 - Download Ollama from https://ollama.com/download
-- Pull a fast model: ```ollama pull phi3:mini``` (or gemma2:2b for smarter responses).
+- Pull a fast model using ```ollama pull phi3:mini``` on terminal or command prompt (or gemma2:2b for smarter responses, depends on whether you use a CPU or GPU).
 
-### 3. Prepare Recipes
+### 3. Prepare recipes
 - Create a recipes/ folder.
 - Add .txt files (one per recipe), e.g., ```paper_dosa.txt```:
   ```
@@ -46,7 +46,7 @@ Run ```python rag_recipes.py``` which builds vectorstore from recipes.
 - Console test: Edit and run the script with ```print(ask_mom("How to make sambar?"))```.
 - Web UI: ```streamlit run app.py``` and type queries in the browser.
 
-### 3. Fine-Tuning Embeddings (optional)
+### 3. Fine-tune embeddings (optional)
 - Upload recipes/ to a Colab notebook (use the finetune.ipynb notebook).
 - Run on T4 GPU: Generates ~50-200 sentence pairs, trains for 50 epochs (~5 min).
 - Download fine_tuned_embeddings.zip, unzip to ./fine_tuned_embeddings.
