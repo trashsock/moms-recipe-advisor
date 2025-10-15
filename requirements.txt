@@ -1,0 +1,8 @@
+langchain
+sentence-transformers
+chromadb
+ollama
+streamlit # optional for deployment
+datasets
+torch
+nltk
