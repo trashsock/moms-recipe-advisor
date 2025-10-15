@@ -26,27 +26,27 @@ pip install langchain sentence-transformers chromadb ollama streamlit datasets t
 - Download Ollama from https://ollama.com/download
 - Pull a fast model: ```ollama pull phi3:mini``` (or gemma2:2b for smarter responses).
 
-### 3. Prepare Recipes:
+### 3. Prepare Recipes
 - Create a recipes/ folder.
-- Add .txt files (one per recipe), e.g., dosa.txt:
+- Add .txt files (one per recipe), e.g., ```paper_dosa.txt```:
   ```
   Paper Dosa
   Ingredients: Urad dal 1 cup, idli rice 3 cups, fenugreek seeds 1 tsp, salt.
   Steps: Soak 6 hours, grind to batter, ferment overnight. Heat tawa, spread thin, cook till golden.
-  Note: Amma's childhood favorite from Chennai—serve with coconut chutney!
+  Note: A childhood favorite from Chennai, best served with coconut chutney!
   ```
  - Ensure you have about 10-20 recipes, the more the better!
 
-### 4. Usage
+## Usage
 
-#### Index recipes
+### 1. Index recipes
 Run ```python rag_recipes.py``` which builds vectorstore from recipes.
 
-#### Ask questions
+### 2. Ask questions
 - Console test: Edit and run the script with ```print(ask_mom("How to make sambar?"))```.
 - Web UI: ```streamlit run app.py``` and type queries in the browser.
 
-#### Fine-Tuning Embeddings (Optional, for Better Retrieval):
+### 3. Fine-Tuning Embeddings (optional)
 - Upload recipes/ to a Colab notebook (use the finetune.ipynb notebook).
 - Run on T4 GPU: Generates ~50-200 sentence pairs, trains for 50 epochs (~5 min).
 - Download fine_tuned_embeddings.zip, unzip to ./fine_tuned_embeddings.
